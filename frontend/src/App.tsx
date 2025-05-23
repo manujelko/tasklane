@@ -1,16 +1,40 @@
-import { Box, Heading, Text, Button, Stack } from "@chakra-ui/react";
+import type { CardModel, ColumnModel } from "./models.ts";
+import { Board } from "./components/Board.tsx";
+import { Center } from "@chakra-ui/react";
+
+const cards: CardModel[] = [
+  {
+    id: 1,
+    title: "dummy title",
+    description:
+      "This is the card body. Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Curabitur nec odio vel dui euismod fermentum.\nCurabitur nec odio vel dui euismod fermentum.",
+  },
+  {
+    id: 2,
+    title: "dummy title",
+    description:
+      "This is the card body. Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Curabitur nec odio vel dui euismod fermentum.\nCurabitur nec odio vel dui euismod fermentum.",
+  },
+  {
+    id: 3,
+    title: "dummy title",
+    description:
+      "This is the card body. Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Curabitur nec odio vel dui euismod fermentum.\nCurabitur nec odio vel dui euismod fermentum.",
+  },
+];
+
+const columns: ColumnModel[] = [
+  { id: 1, title: "pending", cards: cards },
+  { id: 2, title: "in progress", cards: cards },
+  { id: 3, title: "completed", cards: cards },
+];
 
 function App() {
-    return (
-        <Box p={8}>
-            <Heading mb={4}>Tasklane</Heading>
-            <Text mb={4}>Chakra UI is working beautifully ✨</Text>
-            <Stack direction="row" h={4}>
-                <Button>Click me</Button>
-                <Button>Or me</Button>
-            </Stack>
-        </Box>
-    )
+  return (
+    <Center marginTop="5">
+      <Board columns={columns} />
+    </Center>
+  );
 }
 
-export default App
+export default App;
