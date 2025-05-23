@@ -5,7 +5,7 @@ type Props = {
   card: CardModel;
 };
 
-export function CardItem(props: Props) {
+function CardItem(props: Props) {
   return (
     <Card.Root width="320px">
       <Card.Body gap="2">
@@ -18,3 +18,5 @@ export function CardItem(props: Props) {
     </Card.Root>
   );
 }
+
+export default CardItem;

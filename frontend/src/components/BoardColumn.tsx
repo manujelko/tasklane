@@ -1,5 +1,5 @@
 import { Flex, Heading, Stack } from "@chakra-ui/react";
-import { CardItem } from "./CardItem.tsx";
+import CardItem from "./CardItem.tsx";
 import type { CardModel } from "../models.ts";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   cardList: CardModel[];
 };
 
-export function BoardColumn(props: Props) {
+function BoardColumn(props: Props) {
   return (
     <>
       <Flex direction="column" align="center" gap="3">
@@ -21,3 +21,5 @@ export function BoardColumn(props: Props) {
     </>
   );
 }
+
+export default BoardColumn;
